@@ -1,0 +1,8 @@
+.todoCount {
+  composes: todoCount from 'main.scss';
+  color: green;
+
+  &:hover {
+    color: blue;
+  }
+}
