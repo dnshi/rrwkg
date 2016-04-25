@@ -1,0 +1,13 @@
+// strip units function
+@function strip-units($number) {
+   @return $number / ($number * 0 + 1);
+}
+
+// px to rem function
+@function rem($pxval) {
+  $base: strip-units($font-size-root);
+  @if not unitless($pxval) {
+    $pxval: strip-units($pxval);
+  }
+  @return ($pxval / $base) * 1rem;
+}

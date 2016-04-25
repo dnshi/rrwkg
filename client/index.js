@@ -1,15 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import 'index.html'
+import 'global/global.scss'
 
-const rootEl = document.getElementById('root')
+const MOUNT_ELEMENT = document.getElementById('root')
 
 let render = () => {
   const Root = require('./containers/root').default
-  ReactDOM.render(
-    <Root />,
-    rootEl
-  )
+  ReactDOM.render(<Root />, MOUNT_ELEMENT)
 }
 
 if (__DEV__ && module.hot) {
@@ -18,10 +16,7 @@ if (__DEV__ && module.hot) {
   const renderApp = render
   const renderError = (error) => {
     const RedBox = require('redbox-react')
-    ReactDOM.render(
-      <RedBox error={error} />,
-      rootEl
-    )
+    ReactDOM.render(<RedBox error={error} />, MOUNT_ELEMENT)
   }
   render = () => {
     try {

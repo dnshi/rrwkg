@@ -1,0 +1,74 @@
+@import "common";
+@import "nav";
+
+// black bg: #2e3238
+$panel-bg-color: palette(Blue Grey, 800) !default;
+$panel-focus-color: palette(Blue Grey, 900) !default;
+
+.panel {
+  position        : absolute;
+  top             : 0;
+  bottom          : 0;
+  left            : 0;
+  width           : rem(60);
+  background-color: $panel-bg-color;
+  @include box-shadow(true);
+}
+
+.head {
+  margin: 1rem auto;
+}
+
+.user {
+  display: block;
+  cursor : pointer;
+}
+
+.avatar {
+  width        : rem(30);
+  height       : rem(30);
+  margin       : rem(10) auto;
+  border-radius: 15%;
+}
+
+.navList {
+  composes    : nav nav-stacked;
+
+  padding-left: 0;
+  list-style  : none;
+}
+
+.navItem {
+  composes: nav-item;
+}
+
+.navItemActive {
+  position                 : relative;
+  margin-left              : rem(10);
+  border-top-left-radius   : 3px;
+  border-bottom-left-radius: 3px;
+  background-color         : $panel-focus-color;
+  @include box-shadow;
+
+  .navItemBtn {
+    color: palette(Orange);
+
+    &:hover {
+      color : palette(Orange);
+      cursor: default;
+    }
+  }
+}
+
+.navItemBtn {
+  @extend .user;
+
+  color     : palette(Cyan);
+  font-size : rem(24);
+  padding   : 5px;
+  text-align: center;
+
+  &:hover {
+    color: palette(Cyan, 300);
+  }
+}

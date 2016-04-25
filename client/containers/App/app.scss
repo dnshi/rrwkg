@@ -1,0 +1,32 @@
+@import "common";
+
+.mainContainer {
+  --app-sidebar-width: rem(10);
+}
+
+.container {
+  position: absolute;
+  top     : 0;
+  bottom  : 0;
+  right   : 0;
+  left    : rem(60);
+  overflow: hidden;
+
+  &.sidebarExpanded {
+    --app-sidebar-width: rem(300);
+  }
+}
+
+.sidebar {
+  position        : absolute;
+  width           : var(--app-sidebar-width);
+  height          : 100%;
+  background-color: palette(Blue Grey, 900);
+  @include box-shadow;
+}
+
+.content {
+  height          : 100%;
+  margin-left     : var(--app-sidebar-width);
+  background-color: #f5f4f3;
+}

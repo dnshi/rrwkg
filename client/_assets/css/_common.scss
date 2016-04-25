@@ -1,0 +1,19 @@
+// set variables
+$enable-flex             : true;
+$enable-shadows          : true;
+$enable-gradients        : true;
+$enable-transitions      : true;
+$enable-hover-media-query: true;
+
+// boostrap variables
+@import "variables";
+// bootstrap mixins
+@import "mixins";
+// google-material-color
+@import "palette.scss";
+// custom variables
+@import "partials/variables";
+// custom mixins
+@import "partials/mixins";
+// custom functions
+@import "partials/functions";

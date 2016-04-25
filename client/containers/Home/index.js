@@ -7,7 +7,7 @@ import * as TodoActions from 'actions'
 
 export default function Home({ todos, actions }) {
   return (
-    <div>
+    <div className={'container-fluid'}>
       <Header addTodo={actions.addTodo} />
       <MainSection todos={todos} actions={actions} />
     </div>

@@ -1,12 +1,1 @@
-@import "partials/colors";
-@import "partials/variables";
-
-@import "helpers/scrollbars";
-
-:global {
-  .test {
-    color: blue;
-  }
-}
-
-.todoCount { margin-bottom: 20px; color: green; }
+@import "~bootstrap/scss/bootstrap-flex";

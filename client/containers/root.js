@@ -6,29 +6,33 @@ import configureStore from 'store'
 
 import App from './App'
 import Home from './Home'
-import About from './About'
 
 const store = configureStore()
 const history = syncHistoryWithStore(browserHistory, store)
 
 let DevTools
+let router = (
+  <Router history={history} >
+    <Route path="/" component={App}>
+      <IndexRoute components={{ content: Home }} />
+    </Route>
+  </Router>
+)
 
 if (__DEV__) {
   DevTools = require('containers/DevTools').default
+  router = (
+    <div>
+      {router}
+      <div style={{ fontSize: '12px' }}><DevTools /></div>
+    </div>
+  )
 }
 
 export default function Root() {
   return (
     <Provider store={store}>
-      <div>
-        <Router history={history}>
-          <Route path="/" component={App}>
-            <IndexRoute component={Home} />
-            <Route path="about" component={About} />
-          </Route>
-        </Router>
-        {__DEV__ && <DevTools />}
-      </div>
+      {router}
     </Provider>
   )
 }
