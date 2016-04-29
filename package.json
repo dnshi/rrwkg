@@ -1,7 +1,7 @@
 {
-  "name": "rrwk",
-  "version": "1.0.0",
-  "description": "",
+  "name": "rrwkg",
+  "version": "0.1.0",
+  "description": "Sample project using React, Redux, Webpack, Koa2 and GraphQL",
   "main": "index.js",
   "dependencies": {
     "bootstrap": "^4.0.0-alpha.2",
@@ -65,8 +65,8 @@
     "build": "node ./node_modules/.bin/webpack -p --progress --display-chunks --display-modules",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Dean Shi <dean.xiaoshi@gmail.com>",
+  "license": "MIT",
   "babel": {
     "presets": [
       "stage-0"

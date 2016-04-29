@@ -4,7 +4,7 @@
 
 __React__ + __Redux__ + __GraphQL__ + __Webpack__ + __Koa2__
 
-This is a sample project using above technologies.
+This is a sample project using React, Redux, Webpack, Koa2 and GraphQL
 
 ### Run Dev
 
