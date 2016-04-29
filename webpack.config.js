@@ -8,6 +8,7 @@ const assetsPath = path.resolve('./client/_assets/css')
 const assetsGlobalPath = path.resolve('./client/_assets/css/global')
 
 module.exports = {
+  devtool: 'eval-source-map',
   entry: {
     app: './client/index',
     vendor: [
@@ -37,9 +38,16 @@ module.exports = {
       { test: /\.js$/, loader: 'eslint', exclude: /node_modules/ },
     ],
     loaders: [
-      { test: /\.js$/, loader: 'babel?cacheDirectory=true', exclude: /node_modules/ },
-      { test: /\.html$/, loader: 'file?name=[name].[ext]' },
       {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'babel',
+        query: {
+          presets: ['es2015-webpack', 'react', 'stage-0'],
+          plugins: ['transform-runtime', 'lodash'],
+          cacheDirectory: true,
+        },
+      }, {
         test: /\.scss$/,
         exclude: assetsGlobalPath,
         loader: ExtractTextPlugin.extract('style',
@@ -58,6 +66,7 @@ module.exports = {
         test: /\.(woff|woff2|eot|ttf|svg)(\?v=\d+\.\d+\.\d+)?$/,
         loader: `url?limit=${BUILD ? '100000' : '1000'}&name=resource/[hash:9].[ext]`,
       },
+      { test: /\.html$/, loader: 'file?name=[name].[ext]' },
     ],
   },
   sassLoader: {
@@ -74,8 +83,6 @@ module.exports = {
         target: 'http://localhost:4000/graphql',
       },
     },
-    // contentBase: './client',
-    // noInfo: true,
   },
   plugins: [
     new webpack.LoaderOptionsPlugin({

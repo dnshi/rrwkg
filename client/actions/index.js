@@ -10,10 +10,23 @@ export const deleteTodo = id => ({
 
 export const editTodo = (id, text) => ({
   type: types.EDIT_TODO, id, text,
+  _query: `mutation {
+    editTodo(id: ${id}, text: ${JSON.stringify(text)}) {
+      id
+      text
+    }
+  }`,
 })
 
 export const completeTodo = id => ({
-  type: types.COMPLETE_TODO, id,
+  type: types.COMPLETE_TODO,
+  id,
+  _query: `mutation {
+    completeTodo(id: ${id}) {
+      id
+      completed
+    }
+  }`,
 })
 
 export const completeAll = () => ({
@@ -24,23 +37,6 @@ export const clearCompleted = () => ({
   type: types.CLEAR_COMPLETED,
 })
 
-export const startingRequest = () => ({
-  type: 'STARTING_REQUEST',
+export const retrieveTodos = _query => ({
+  type: types.GET_TODOS, _query,
 })
-
-export const finishedRequest = user => ({
-  type: 'FINISHED_REQUEST',
-  user,
-})
-
-export const getUser = query =>
-  dispatch => {
-    dispatch(startingRequest())
-    return fetch('/graphql', {
-      method: 'post',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ query }),
-    })
-      .then(response => response.json())
-      .then(response => dispatch(finishedRequest(response.data.user)))
-  }

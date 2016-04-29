@@ -4,16 +4,12 @@ import _appMenu from './appMenu.scss'
 
 export default function AppMenu() {
   let style = {
-    backgroundImage: 'url("https://lh4.googleusercontent.com/-6uBfz5wUBVw/AAAAAAAAAAI/AAAAAAAAAEM/YS8gF-UZBVA/photo.jpg?sz=50")',
-    backgroundSize: 'cover',
-    backgroundPosition: '50% 50%',
+    backgroundImage: 'url("http://www.adiumxtras.com/images/thumbs/dango_menu_bar_icon_set_11_19047_6240_thumb.png")',
   }
   return (
     <aside className={_appMenu.panel}>
       <div className={_appMenu.head}>
-        <a className={_appMenu.user}>
-          <div className={_appMenu.avatar} style={style}></div>
-        </a>
+        <a className={_appMenu.user} style={style}></a>
       </div>
       <ul className={_appMenu.navList}>
         <li className={classNames(_appMenu.navItem, _appMenu.navItemActive)}>

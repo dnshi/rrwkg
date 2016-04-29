@@ -1,14 +1,22 @@
-{
-  "1": {
-    "id": "1",
-    "name": "Dan"
+[
+  {
+    "id": 0,
+    "completed": false,
+    "text": "Use Redux"
   },
-  "2": {
-    "id": "2",
-    "name": "Marie"
+  {
+    "id": 1,
+    "completed": false,
+    "text": "test1"
   },
-  "3": {
-    "id": "3",
-    "name": "Jessie"
+  {
+    "id": 2,
+    "completed": false,
+    "text": "test2"
+  },
+  {
+    "id": 3,
+    "completed": false,
+    "text": "test3"
   }
-}
+]

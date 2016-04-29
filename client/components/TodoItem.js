@@ -32,7 +32,7 @@ class TodoItem extends Component {
         <TodoTextInput
           text={todo.text}
           editing={this.state.editing}
-          onSave={(text) => this.handleSave(todo.id, text)}
+          onSave={text => this.handleSave(todo.id, text)}
         />
       )
     } else {
@@ -44,7 +44,7 @@ class TodoItem extends Component {
             checked={todo.completed}
             onChange={() => completeTodo(todo.id)}
           />
-            <label onDoubleClick={::this.handleDoubleClick}>
+          <label onDoubleClick={::this.handleDoubleClick}>
             {todo.text}
           </label>
           <button

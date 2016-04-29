@@ -1,7 +1,6 @@
 @import "common";
 @import "nav";
 
-// black bg: #2e3238
 $panel-bg-color: palette(Blue Grey, 800) !default;
 $panel-focus-color: palette(Blue Grey, 900) !default;
 
@@ -20,15 +19,14 @@ $panel-focus-color: palette(Blue Grey, 900) !default;
 }
 
 .user {
-  display: block;
-  cursor : pointer;
-}
-
-.avatar {
-  width        : rem(30);
-  height       : rem(30);
-  margin       : rem(10) auto;
-  border-radius: 15%;
+  display            : block;
+  width              : rem(30);
+  height             : rem(30);
+  margin             : auto;
+  cursor             : pointer;
+  border-radius      : 15%;
+  background-size    : cover;
+  background-position: 50% 50%;
 }
 
 .navList {
@@ -39,10 +37,20 @@ $panel-focus-color: palette(Blue Grey, 900) !default;
 }
 
 .navItem {
+  --nav-item-btn-color: palette(Cyan);
+  --nav-item-btn-hover-color: palette(Cyan, 300);
+
   composes: nav-item;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .navItemActive {
+  --nav-item-btn-color: palette(Orange);
+  --nav-item-btn-hover-color: palette(Orange);
+
   position                 : relative;
   margin-left              : rem(10);
   border-top-left-radius   : 3px;
@@ -50,25 +58,19 @@ $panel-focus-color: palette(Blue Grey, 900) !default;
   background-color         : $panel-focus-color;
   @include box-shadow;
 
-  .navItemBtn {
-    color: palette(Orange);
-
-    &:hover {
-      color : palette(Orange);
-      cursor: default;
-    }
+  .navItemBtn:hover {
+    cursor: default;
   }
 }
 
 .navItemBtn {
-  @extend .user;
-
-  color     : palette(Cyan);
+  display   : block;
+  color     : var(--nav-item-btn-color);
   font-size : rem(24);
   padding   : 5px;
   text-align: center;
 
   &:hover {
-    color: palette(Cyan, 300);
+    color: var(--nav-item-btn-hover-color);
   }
 }

@@ -1,6 +1,7 @@
 import { createStore, compose, applyMiddleware } from 'redux'
 import rootReducer from 'reducers'
 import thunk from 'redux-thunk'
+import graphqlMiddleware from 'middleware/graphql'
 
 let enhancer
 
@@ -10,7 +11,7 @@ if (__DEV__) {
   const persistState = require('redux-devtools').persistState
 
   enhancer = compose(
-    applyMiddleware(thunk, createLogger()),
+    applyMiddleware(graphqlMiddleware, thunk, createLogger()),
     DevTools.instrument(),
     persistState(
       window.location.href.match(
@@ -19,7 +20,7 @@ if (__DEV__) {
     )
   )
 } else {
-  enhancer = applyMiddleware(thunk)
+  enhancer = applyMiddleware(graphqlMiddleware, thunk)
 }
 
 export default function configureStore(initialState) {
