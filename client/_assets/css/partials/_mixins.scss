@@ -1,0 +1,37 @@
+@mixin box-shadow($inset: false, $top: 0, $left: 0, $blur: 5px, $spread: 0, $color: palette(Black)) {
+   @if $inset{
+    box-shadow: inset $top $left $blur $spread $color;
+  }
+  @else {
+    box-shadow: $top $left $blur $spread $color;
+  }
+}
+
+$background-color-darker: palette(Grey, 300) !default;
+$background-color-lighter: #f7f7f7 !default;
+$border-color-darker: palette(Grey) !default;
+$border-color-lighter: palette(Grey, 400) !default;
+$border-radius: 3px !default;
+
+// Create scrollbar styling
+@mixin scrollbar($size: 10px, $thumb: $border-color-lighter, $track: $background-color-lighter) {
+  &::-webkit-scrollbar {
+    width : $size;
+    height: $size;
+
+    &:window-inactive {
+      opacity: 0;
+    }
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: $border-radius * 10;
+    background   : $thumb;
+    box-shadow   : inset 0 0 0 1px $track;
+    @include box-shadow(true, $color: $track, $spread: 1px);
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $track;
+  }
+}
