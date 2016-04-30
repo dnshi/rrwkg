@@ -1,9 +1,9 @@
-RRGWK
+RRWKG
 =====
 
 :tada::tada::tada:
 
-__React__ + __Redux__ + __GraphQL__ + __Webpack__ + __Koa2__
+__React__ + __Redux__ + __Webpack__ + __Koa2__ + __GraphQL__
 
 This is a sample project using React, Redux, Webpack, Koa2 and GraphQL
 
