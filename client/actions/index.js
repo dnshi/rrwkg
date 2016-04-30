@@ -1,11 +1,36 @@
 import * as types from 'constants/ActionTypes'
 
+export const retrieveTodos = () => ({
+  type: types.GET_TODOS,
+  _query: `{
+    getTodos {
+      id
+      completed
+      text
+    }
+  }`,
+})
+
 export const addTodo = text => ({
-  type: types.ADD_TODO, text,
+  type: types.ADD_TODO,
+  _query: `mutation {
+    addTodo(text: ${JSON.stringify(text)}){
+      id
+      completed
+      text
+    }
+  }`,
 })
 
 export const deleteTodo = id => ({
-  type: types.DELETE_TODO, id,
+  type: types.DELETE_TODO,
+  _query: `mutation {
+    deleteTodo(id: ${id}) {
+      id
+      completed
+      text
+    }
+  }`,
 })
 
 export const editTodo = (id, text) => ({
@@ -13,6 +38,7 @@ export const editTodo = (id, text) => ({
   _query: `mutation {
     editTodo(id: ${id}, text: ${JSON.stringify(text)}) {
       id
+      completed
       text
     }
   }`,
@@ -20,23 +46,33 @@ export const editTodo = (id, text) => ({
 
 export const completeTodo = id => ({
   type: types.COMPLETE_TODO,
-  id,
   _query: `mutation {
     completeTodo(id: ${id}) {
       id
       completed
+      text
     }
   }`,
 })
 
 export const completeAll = () => ({
   type: types.COMPLETE_ALL,
+  _query: `mutation {
+    completeAll {
+      id
+      completed
+      text
+    }
+  }`,
 })
 
 export const clearCompleted = () => ({
   type: types.CLEAR_COMPLETED,
-})
-
-export const retrieveTodos = _query => ({
-  type: types.GET_TODOS, _query,
+  _query: `mutation {
+    clearCompleted {
+      id
+      completed
+      text
+    }
+  }`,
 })

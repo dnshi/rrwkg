@@ -12,6 +12,8 @@ module.exports = {
   entry: {
     app: './client/index',
     vendor: [
+      'classnames',
+      'lodash',
       'react',
       'react-dom',
       'react-redux',
@@ -79,8 +81,8 @@ module.exports = {
   devServer: {
     contentBase: contentPath,
     proxy: {
-      '/graphql': {
-        target: 'http://localhost:4000/graphql',
+      '/api': {
+        target: 'http://localhost:4000/api',
       },
     },
   },

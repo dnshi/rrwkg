@@ -1,6 +1,6 @@
 import { isObject, has } from 'lodash'
 
-const endpoint = '/graphql'
+const endpoint = '/api'
 const opts = {
   method: 'post',
   headers: {

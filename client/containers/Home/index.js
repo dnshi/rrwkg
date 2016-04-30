@@ -14,15 +14,7 @@ export default class Home extends Component {
 
   componentWillMount() {
     const { actions } = this.props
-    actions.retrieveTodos(
-      `{
-      	todos{
-      	  id
-          completed
-          text
-      	}
-      }`
-    )
+    actions.retrieveTodos()
   }
 
   render() {
