@@ -17,24 +17,46 @@ Requirements
 Features
 --------
 
+**Front-end**
 - [x] React
+  - react-hot-loader
 - [x] Redux
   - react-redux
   - redux-thunk
   - redux-devtools
-- [x] react-router
+- [x] React Router
   - react-router-redux
-- [x] Webpack 2
-- [x] Babel 6
-- [x] ESLint
-- [x] SCSS
+- [x] SCSS / CSS Modules
+- [x] Font Awesome
 - [x] Lodash
+- [x] Bootstrap v4
+
+**Back-end**
 - [x] Koa 2
 - [x] GraphQL
-- [x] Bootstrap v4
-- [ ] Enzyme / AVA
+- [ ] Socket.io / SocketCluster
 - [ ] RethinkDB
-- [ ] Socket.io/SocketCluster
+
+**Builder**
+- [x] Webpack 2
+- [x] Webpack Dev Server
+- [x] Babel 6
+  - ES7 - (stage-0)
+  - React
+
+**Test runner**
+- [x] AVA
+- [ ] Enzyme
+
+**Lint**
+- [x] ESLint
+  - Airbnb's .eslintrc
+  - eslint-cli
+  - eslint-loader
+
+**Code coverage tool**
+- [x] nyc
+- [x] tap-diff
 
 ### Run Dev
 

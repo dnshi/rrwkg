@@ -1,19 +1,14 @@
-import {
-  // GET_TODOS,
+import { types } from 'actions'
+
+const {
   GET_TODOS_SUCCESS,
-  // ADD_TODO,
   ADD_TODO_SUCCESS,
-  // DELETE_TODO,
   DELETE_TODO_SUCCESS,
-  // EDIT_TODO,
   EDIT_TODO_SUCCESS,
-  // COMPLETE_TODO,
   COMPLETE_TODO_SUCCESS,
-  // COMPLETE_ALL,
   COMPLETE_ALL_SUCCESS,
-  // CLEAR_COMPLETED,
   CLEAR_COMPLETED_SUCCESS,
-} from 'constants/ActionTypes'
+} = types
 
 export default function todos(state = [], { type, data }) {
   switch (type) {
