@@ -10,8 +10,8 @@ This is a sample project using React, Redux, Webpack, Koa2 and GraphQL
 Requirements
 ------------
 
-* node `^6.0.0`
-* node `^3.0.0`
+* node `v4.x.x +`
+* npm `v3.x.x +`
 
 
 Features
@@ -56,7 +56,6 @@ Features
 
 **Code coverage tool**
 - [x] nyc
-- [x] tap-diff
 
 ### Run Dev
 
