@@ -1,6 +1,7 @@
 const path = require('path')
 const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const eslintFormatter = require('eslint-friendly-formatter')
 const BUILD = process.env.NODE_ENV === 'production'
 const contentPath = path.resolve('./www')
 const clientPath = path.resolve('./client')
@@ -19,6 +20,7 @@ module.exports = {
       'react-redux',
       'react-router',
       'react-router-redux',
+      'react-hot-loader/patch',
       'redux',
       'redux-thunk',
     ],
@@ -46,7 +48,7 @@ module.exports = {
         loader: 'babel',
         query: {
           presets: ['es2015-webpack', 'react', 'stage-0'],
-          plugins: ['transform-runtime', 'lodash'],
+          plugins: ['react-hot-loader/babel', 'transform-runtime', 'lodash'],
           cacheDirectory: true,
         },
       }, {
@@ -77,6 +79,9 @@ module.exports = {
       './node_modules/bootstrap/scss',
       './node_modules/google-material-color/dist',
     ],
+  },
+  eslint: {
+    formatter: eslintFormatter,
   },
   devServer: {
     contentBase: contentPath,

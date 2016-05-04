@@ -1,4 +1,19 @@
-import * as types from 'constants/ActionTypes'
+import { each } from 'lodash'
+
+export const types = {}
+each([
+  'GET_TODOS',
+  'ADD_TODO',
+  'DELETE_TODO',
+  'EDIT_TODO',
+  'COMPLETE_TODO',
+  'COMPLETE_ALL',
+  'CLEAR_COMPLETED',
+], type => Object.assign(types, {
+  [type]: type,
+  [`${type}_SUCCESS`]: `${type}_SUCCESS`,
+  [`${type}_FAILED`]: `${type}_FAILED`,
+}))
 
 export const retrieveTodos = () => ({
   type: types.GET_TODOS,
