@@ -7,6 +7,10 @@
   }
 }
 
+@mixin transition() {
+  transition: all .2s ease;
+}
+
 $background-color-darker: palette(Grey, 300) !default;
 $background-color-lighter: #f7f7f7 !default;
 $border-color-darker: palette(Grey) !default;
