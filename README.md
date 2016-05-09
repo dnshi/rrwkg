@@ -10,8 +10,8 @@ This is a sample project using React, Redux, Webpack, Koa2 and GraphQL
 Requirements
 ------------
 
-* node `v4.x.x +`
-* npm `v3.x.x +`
+* node >= `v4.x.x`
+* npm >= `v3.x.x`
 
 
 Features
