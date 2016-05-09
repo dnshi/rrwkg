@@ -5,7 +5,7 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import * as TodoActions from 'actions'
 
-export default class Todo extends Component {
+export default class Home extends Component {
   static propTypes = {
     todos: PropTypes.array.isRequired,
     actions: PropTypes.object.isRequired,
@@ -36,4 +36,4 @@ const mapDispatchToProps = dispatch => ({
   actions: bindActionCreators(TodoActions, dispatch),
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(Todo)
+export default connect(mapStateToProps, mapDispatchToProps)(Home)

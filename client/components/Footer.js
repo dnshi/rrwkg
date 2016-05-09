@@ -1,6 +1,7 @@
 import React, { PropTypes, Component } from 'react'
 import classnames from 'classnames'
 import { SHOW_ALL, SHOW_COMPLETED, SHOW_ACTIVE } from '../constants/TodoFilters'
+import styles from './footer.scss'
 
 const FILTER_TITLES = {
   [SHOW_ALL]: 'All',
@@ -14,7 +15,7 @@ class Footer extends Component {
     const itemWord = activeCount === 1 ? 'item' : 'items'
 
     return (
-      <span>
+      <span className={classnames(styles.todoCount, 'test')}>
         <strong>{activeCount || 'No'}</strong> {itemWord} left
       </span>
     )
