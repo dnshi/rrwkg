@@ -1,0 +1,19 @@
+@import 'common';
+
+.panel {
+  padding: rem(20);
+}
+
+.items {
+  padding        : 0;
+  list-style-type: none;
+}
+
+.item {
+  color: palette(Grey);
+
+  &:before {
+    margin-right: rem(5);
+    content     : '#';
+  }
+}
