@@ -1,6 +1,9 @@
 import React from 'react'
 import _chat from './chat.scss'
 
+import ChannelList from './ChannelList'
+export { ChannelList }
+
 export default function Chat() {
   return (
     <div className={_chat.chatContent}>

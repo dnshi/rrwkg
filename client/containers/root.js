@@ -5,8 +5,7 @@ import { syncHistoryWithStore } from 'react-router-redux'
 import configureStore from 'store'
 
 import App from './App'
-import Chat from './Chat'
-import ChannelList from './Chat/ChannelList'
+import Chat, { ChannelList } from './Chat'
 import Todo from './Todo'
 
 const store = configureStore()
